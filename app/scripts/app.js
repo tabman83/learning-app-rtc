@@ -21,6 +21,9 @@
 		$routeProvider.whenAuthenticated('/Chat', {
 			templateUrl: 'views/chat.html',
 			controller: 'ChatCtrl'
+		}).whenAuthenticated('/About', {
+			templateUrl: 'views/about.html',
+			controller: 'AboutCtrl'
 		}).when('/Login', {
 			templateUrl: 'views/login.html',
 			controller: 'LoginCtrl'

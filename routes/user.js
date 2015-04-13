@@ -9,7 +9,14 @@ var routes = [{
                 return reply(Boom.badImplementation(err));
             }
 
-            reply(Boom.unauthorized());
+			reply({
+				id: 2,
+				email: 'tabman83@gmail.com',
+				name: 'Antonino Parisi',
+				roles: ['Teacher']
+			});
+
+            //reply(Boom.unauthorized());
         }
 	}
 }, {

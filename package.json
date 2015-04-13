@@ -43,6 +43,8 @@
   "homepage": "https://github.com/tabman83/learning-app-rtc",
   "dependencies": {
     "boom": "^2.7.0",
-    "hapi": "^8.4.0"
+    "hapi": "^8.4.0",
+    "node-uuid": "^1.4.3",
+    "socket.io": "^1.3.5"
   }
 }
