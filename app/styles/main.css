@@ -1,89 +1,103 @@
 .browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
-
-/* Space out content a bit */
+.navbar {
+    margin: 0px;
+}
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+    padding-top: 51px;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+html,
+body,
+.canvas {
+    height: 100%;
+}
+.canvas {
+    width: 100%;
+    padding: 0px;
+    height:100%;
+    display:flex;
+    flex-flow:row;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
+.placeholder {
+    background: url(http://i.stack.imgur.com/yZlqh.png) no-repeat;
+    background-size: 100% 100%;
+    border-right: dashed 1px #d3d3d3;
+    border-bottom: dashed 1px #d3d3d3;
 }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+.section-video {
+    flex-grow:1;
+    max-height:300px;
+    background: url(http://shackmanlab.org/wp-content/uploads/2013/07/person-placeholder.jpg) no-repeat;
+    background-size: cover;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.section-main,
+.section-info {
+    flex-grow:1;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
+.section-contextual {
+    flex-grow:1;
+    max-width:300px;
+    display:flex;
+    flex-flow:column;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+/***************** Sign in form **************************/
+body.signin {
+    background: url(/images/login-bg.jpg) no-repeat;
+    background-size: cover;
+}
+.signin .panel-heading {
+    background-color: #3a3f51;
+    color: white;
+}
+.signin .panel-heading h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.panel.signin {
+    max-width: 330px;
+    margin: 0px auto;
+    border: none;
+}
+.signin .form-control,
+.signin.panel {
+  box-shadow: 0 0 0 #000 !important;
+}
+.signin .form-control-feedback {
+    top: 10px;
+}
+.signin .checkbox {
+    margin-top: -1px;
 }
 
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+@media (max-width: 767px) {
+    body.signin {
+        background: white;
+    }
+    .signin .panel-heading,
+    .panel.signin {
+        width: 100%;
+        max-width: inherit;
+        border-radius: 0px;
+    }
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
+@media (max-width: 1199px) {
+    body.signin {
+        padding-top: 0px;
+    }
+    .signin .panel-heading,
+    .panel.signin {
+        border-radius: 0px;
+    }
 }
-
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
+/***************************************************************/

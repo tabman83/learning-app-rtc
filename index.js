@@ -7,19 +7,18 @@ description:    main server file
 */
 
 var Hapi = require('hapi');
+var routes = require('./routes/');
 
 var server = new Hapi.Server();
-server.connection({ routes: { cors: true } });
-server.route({
-    method: 'GET',
-    path: '/{param*}',
-    handler: {
-        directory: {
-			index: true,
-            path: './dist'
-        }
+server.connection({
+    address: process.env.IP || '127.0.0.1',
+    port: process.env.PORT || 4000,
+    routes: {
+        cors: true
     }
 });
+routes(server);
+
 server.start(function(err) {
     if(err) {
 		console.error(err);

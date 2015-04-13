@@ -2,7 +2,7 @@
   "name": "learning-app-rtc",
   "version": "0.1.0",
   "description": "A proof of concept for multimedia real time communication.",
-  "main": "server.js",
+  "main": "index.js",
   "devDependencies": {
     "autoprefixer-core": "^4.0.2",
     "browser-sync": "^1.8.2",
@@ -42,6 +42,7 @@
   },
   "homepage": "https://github.com/tabman83/learning-app-rtc",
   "dependencies": {
+    "boom": "^2.7.0",
     "hapi": "^8.4.0"
   }
 }
