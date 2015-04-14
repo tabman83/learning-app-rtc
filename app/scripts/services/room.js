@@ -1,4 +1,5 @@
 ;(function(angular, undefined) {
+    'use strict';
 
     angular.module('LearningApp').factory('Room', ['$window', '$rootScope', '$q', 'Io', function($window, $rootScope, $q, Io) {
 
@@ -79,7 +80,7 @@
             }
         }
 
-        var socket = Io.connect('http://localhost:4000'),
+        var socket = Io.connect('http://192.168.21.8:4000'),
             connected = false;
 
         function addHandlers(socket) {

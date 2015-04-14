@@ -1,5 +1,6 @@
 ;(function(angular, undefined) {
-
+	'use strict';
+	
 	angular.module('LearningApp').directive('videoPlayer', ['$sce', function ($sce) {
         return {
             template: '<div><video ng-src="" autoplay></video></div>',

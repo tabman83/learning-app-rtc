@@ -1,8 +1,7 @@
 (function(angular, undefined) {
+	'use strict';
 
-	angular.module('LearningApp').controller('AboutCtrl', ['$scope', '$location', function($scope, $location) {
-
-
+	angular.module('LearningApp').controller('AboutCtrl', [function() {
 	}]);
 
 })(angular);

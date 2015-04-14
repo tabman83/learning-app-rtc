@@ -1,6 +1,7 @@
 (function(angular, undefined) {
+	'use strict';
 
-	angular.module('LearningApp').controller('ChatCtrl', ['$window', '$scope', '$location', 'VideoStream', 'Room', function($window, $scope, $location, VideoStream, Room) {
+	angular.module('LearningApp').controller('ChatCtrl', ['$window', '$scope', '$location', '$routeParams', '$sce', 'VideoStream', 'Room', function($window, $scope, $location, $routeParams, $sce, VideoStream, Room) {
 
 		var URL = $window.URL || $window.mozURL || $window.webkitURL;
 		var cachedStream;
@@ -9,7 +10,13 @@
 			cachedStream = stream;
 	      	Room.init(cachedStream);
 			cachedStream = URL.createObjectURL(cachedStream);
-	        Room.createRoom().then(function (roomId) {});
+			if (!$routeParams.roomId) {
+        		Room.createRoom().then(function (roomId) {
+          			$location.path('/Chat/' + roomId);
+        		});
+      		} else {
+        		Room.joinRoom($routeParams.roomId);
+      		}
 	    }, function () {
 	      $scope.error = 'No audio/video permissions. Please refresh your browser and allow the audio/video capturing.';
 	    });
@@ -29,7 +36,7 @@
 		});
 
 		$scope.getLocalVideo = function () {
-			return $sce.trustAsResourceUrl(stream);
+			return $sce.trustAsResourceUrl(cachedStream);
 		};
 
 	}]);

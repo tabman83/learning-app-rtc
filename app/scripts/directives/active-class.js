@@ -1,4 +1,5 @@
 ;(function(angular, undefined) {
+	'use strict';
 
 	angular.module('LearningApp').directive('activeClass', [function() {
 
@@ -7,8 +8,8 @@
 
 				var anchorLink = element.find('a')[0].getAttribute('ng-href') || element.find('a')[0].getAttribute('href');
 				anchorLink = anchorLink.replace(/^#/, '');
-				scope.$on("$routeChangeSuccess", function (event, current) {
-					if (current.$$route && current.$$route.originalPath == anchorLink) {
+				scope.$on('$routeChangeSuccess', function (event, current) {
+					if (current.$$route && current.$$route.originalPath === anchorLink) {
 						element.addClass(attrs.activeClass);
 					}
 					else {

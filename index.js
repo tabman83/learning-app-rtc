@@ -12,7 +12,7 @@ var uuid = require('node-uuid');
 
 var server = new Hapi.Server();
 server.connection({
-    address: process.env.IP || '127.0.0.1',
+    address: process.env.IP || '192.168.21.8',
     port: process.env.PORT || 4000,
     routes: {
         cors: true

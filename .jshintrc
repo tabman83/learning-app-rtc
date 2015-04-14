@@ -15,5 +15,10 @@
   "undef": true,
   "unused": true,
   "strict": true,
-  "jquery": true
+  "jquery": true,
+  "globals": {
+      "io": false,
+      "angular": false,
+      "EventEmitter": false
+  }
 }

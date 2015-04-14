@@ -1,4 +1,5 @@
 ;(function(angular, undefined) {
+	'use strict';
 
 	// app initialization
 	angular.module('LearningApp', ['ngRoute', 'ngResource']);
@@ -15,10 +16,10 @@
 	        	}]
 			});
             return $routeProvider.when(path, route);
-        }
+        };
 
 		// configure router
-		$routeProvider.whenAuthenticated('/Chat', {
+		$routeProvider.whenAuthenticated('/Chat/:roomId', {
 			templateUrl: 'views/chat.html',
 			controller: 'ChatCtrl'
 		}).whenAuthenticated('/About', {

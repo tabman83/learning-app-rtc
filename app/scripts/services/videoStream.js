@@ -1,5 +1,6 @@
 ;(function(angular, undefined) {
-
+    'use strict';
+    
     angular.module('LearningApp').factory('VideoStream', ['$window', '$q', function($window, $q) {
         var cachedStream;
         var getUserMedia = ($window.navigator.getUserMedia || $window.navigator.webkitGetUserMedia || $window.navigator.mozGetUserMedia).bind($window.navigator);
